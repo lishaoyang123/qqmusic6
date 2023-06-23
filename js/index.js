@@ -42,10 +42,10 @@ FastClick.attach(document.body);
         let { currentTime, duration } = audioBox
         if (isNaN(currentTime) || isNaN(duration)) return
         // 播放结束
-        // if (currentTime >= duration) {
-        //     playend()
-        //     return
-        // }
+        if (currentTime >= duration) {
+            playend()
+            return
+        }
 
         // 控制进度条
         let { minutes: currentTimeMinutes, seconds: currentTimeSeconds } = format(currentTime),
